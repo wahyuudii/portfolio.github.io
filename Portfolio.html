@@ -1,0 +1,1236 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Portfolio — Wahyudi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Caveat:wght@400;600;700&display=swap">
+<style>
+:root {
+  --black: #0A0A0A;
+  --lime:  #C6F135;
+  --white: #FFFFFF;
+  --gray3: #1A1A1A;
+  --gray4: #111111;
+  --font-h: 'Kanit', sans-serif;
+  --font-s: 'Caveat', cursive;
+  --nav-h: 80px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-h); background: var(--black); color: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+button { border: none; cursor: pointer; font-family: inherit; }
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  background: rgba(10,10,10,.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(20px,4vw,64px); gap: 20px;
+}
+.nav-logo { font-weight: 800; font-size: 26px; letter-spacing: -1px; color: var(--white); }
+.nav-logo-dot { color: var(--lime); }
+.nav-links { display: flex; align-items: center; gap: clamp(16px,2.5vw,36px); }
+.nav-links a {
+  font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+  color: rgba(255,255,255,.5); transition: color .2s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--lime); transform: scaleX(0); transition: transform .25s;
+}
+.nav-links a:hover, .nav-links a.active-link { color: var(--white); }
+.nav-links a:hover::after, .nav-links a.active-link::after { transform: scaleX(1); }
+.btn-talk {
+  background: var(--lime); color: var(--black);
+  font-family: var(--font-h); font-weight: 700; font-size: 13px; letter-spacing: .5px;
+  padding: 10px 22px; border-radius: 4px; white-space: nowrap; transition: background .2s;
+}
+.btn-talk:hover { background: #d4ff3d; }
+.nav-ham { display: none; flex-direction: column; gap: 5px; width: 36px; padding: 6px; background: none; }
+.nav-ham span { display: block; height: 2px; background: var(--white); border-radius: 2px; }
+.nav-ham span:nth-child(2) { width: 70%; }
+
+/* ===================== HERO ===================== */
+.port-hero {
+  min-height: 52vh;
+  padding: calc(var(--nav-h) + 70px) clamp(20px,5vw,80px) 56px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero-bg svg { width: 100%; height: 100%; opacity: .12; }
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(10,10,10,.2) 0%, rgba(10,10,10,.92) 100%);
+}
+.hero-inner { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--lime); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--lime); display: block; }
+.port-hero h1 {
+  font-size: clamp(44px,8vw,108px); font-weight: 800;
+  letter-spacing: -3px; line-height: .92; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.port-hero h1 em {
+  font-style: normal;
+  -webkit-text-stroke: 2px rgba(255,255,255,.35); color: transparent;
+}
+.port-hero p {
+  font-size: 15px; color: rgba(255,255,255,.45); max-width: 480px; line-height: 1.8;
+}
+
+/* ===================== FILTER BAR ===================== */
+.filter-wrap {
+  padding: 36px clamp(20px,5vw,80px) 0;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: var(--font-h); font-size: 11px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 8px 18px; border-radius: 3px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: transparent; color: rgba(255,255,255,.4);
+  cursor: pointer; transition: all .2s;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--lime); color: var(--black); border-color: var(--lime);
+}
+
+/* ===================== SECTION HEADER ===================== */
+.section-head {
+  padding: 48px clamp(20px,5vw,80px) 0;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--lime); margin-bottom: 8px; }
+.section-head h2 {
+  font-size: clamp(24px,3.5vw,42px); font-weight: 700; letter-spacing: -1px; line-height: 1.1;
+}
+.section-head h2 em { font-style: normal; font-family: var(--font-s); color: var(--lime); font-size: 1.1em; }
+.view-all {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: rgba(255,255,255,.4); border: 1px solid rgba(255,255,255,.12);
+  padding: 10px 20px; border-radius: 3px; white-space: nowrap;
+  transition: color .2s, border-color .2s;
+}
+.view-all:hover { color: var(--lime); border-color: var(--lime); }
+
+/* ===================== PORTFOLIO GRID ===================== */
+/*
+  HOW TO ADD IMAGES:
+  Replace <div class="card-img-placeholder"> with:
+  <img src="assets/img/YOUR-IMAGE.jpg" alt="Project Name" class="card-img">
+
+  Recommended sizes:
+  - Square card   (1:1) → 600x600px
+  - Portrait card (4:5) → 600x750px
+  - Wide card     (3:2) → 900x600px  — only for .card-wide
+*/
+
+.port-grid-wrap {
+  padding: 32px clamp(20px,5vw,80px) 60px;
+}
+
+/* 3-column grid — tinggi otomatis mengikuti gambar */
+.port-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+/* Card base */
+.port-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--gray3);
+  cursor: pointer;
+  transition: transform .3s cubic-bezier(.25,.8,.25,1);
+}
+.port-card:hover { transform: translateY(-5px); }
+
+/* Image inside card — tampil penuh tidak terpotong */
+.card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .4s ease;
+}
+.port-card:hover .card-img { transform: scale(1.03); }
+
+/* Placeholder — ukuran tetap saat belum ada gambar */
+.card-img-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 12px;
+  background: linear-gradient(145deg, #1e1e1e 0%, #141414 100%);
+  position: relative;
+}
+
+.card-img-placeholder::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255,255,255,.015) 20px,
+    rgba(255,255,255,.015) 40px
+  );
+}
+.placeholder-icon { font-size: 36px; opacity: .25; position: relative; z-index: 1; }
+.placeholder-label {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,.18); position: relative; z-index: 1;
+  text-align: center; padding: 0 16px;
+}
+/* Add-image hint */
+.placeholder-hint {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 6px;
+  font-size: 10px; letter-spacing: .5px; text-transform: uppercase;
+  color: rgba(198,241,53,.5);
+  border: 1px dashed rgba(198,241,53,.25);
+  padding: 5px 12px; border-radius: 20px;
+  white-space: nowrap; z-index: 1;
+}
+
+/* Overlay on hover */
+.card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.3) 50%, transparent 100%);
+  opacity: 0; transition: opacity .3s;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 20px;
+}
+.port-card:hover .card-overlay { opacity: 1; }
+.card-cat {
+  font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--lime); margin-bottom: 5px;
+}
+.card-title {
+  font-size: clamp(13px,1.2vw,16px); font-weight: 700; line-height: 1.3;
+  color: var(--white); margin-bottom: 10px;
+}
+.card-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+.card-btn-arrow {
+  width: 22px; height: 22px;
+  background: var(--lime); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: var(--black);
+}
+
+/* Category chip */
+.card-chip {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  background: rgba(10,10,10,.75);
+  backdrop-filter: blur(8px);
+  font-size: 9px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+  padding: 4px 10px; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+/* Number badge */
+.card-num {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  font-size: 11px; font-weight: 800; color: rgba(255,255,255,.18);
+  letter-spacing: .5px;
+}
+
+/* Wide card spans 2 columns */
+.port-card.wide { grid-column: span 2; }
+
+/* Hidden when filtered */
+.port-card.hidden { display: none; }
+
+/* ===================== AWARDS STRIP ===================== */
+.awards {
+  margin: 0 clamp(20px,5vw,80px) 60px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.awards-head {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  padding: 14px 24px; gap: 16px;
+  background: rgba(255,255,255,.03);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+}
+.awards-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  padding: 18px 24px; gap: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  align-items: center;
+  transition: background .2s;
+}
+.awards-row:last-child { border-bottom: none; }
+.awards-row:hover { background: rgba(255,255,255,.025); }
+.awards-year { font-size: 13px; font-weight: 700; color: var(--lime); }
+.awards-title { font-size: 14px; font-weight: 600; }
+.awards-org { font-size: 13px; color: rgba(255,255,255,.4); }
+.awards-badge {
+  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .5px;
+  padding: 3px 10px; border-radius: 20px;
+}
+.awards-badge.gold { background: rgba(255,215,0,.12); color: #FFD700; }
+.awards-badge.silver { background: rgba(192,192,192,.12); color: #C0C0C0; }
+
+/* ===================== CTA ===================== */
+.cta-band {
+  background: var(--lime);
+  padding: clamp(48px,6vw,80px) clamp(20px,5vw,80px);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; flex-wrap: wrap;
+}
+.cta-band h2 {
+  font-size: clamp(28px,4vw,52px); font-weight: 800;
+  letter-spacing: -1.5px; color: var(--black); line-height: 1.1;
+}
+.cta-band h2 em { font-style: normal; font-family: var(--font-s); font-size: 1.1em; }
+.btn-dark {
+  background: var(--black); color: var(--white);
+  font-family: var(--font-h); font-weight: 700; font-size: 14px;
+  padding: 14px 32px; border-radius: 4px; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 8px; transition: background .2s;
+}
+.btn-dark:hover { background: #111; }
+
+
+
+
+.cta-judul {
+  background: var(--lime);
+  padding: clamp(48px,6vw,0,5px) clamp(20px,5vw,80px);
+  text-align: center;
+  display: flex; align-items: center; justify-content:center;
+  gap: 32px; flex-wrap: wrap;
+
+}
+.cta-judul h2 {
+  font-size: clamp(28px,4vw,52px); font-weight: 800;
+  letter-spacing: -1.5px; color: var(--black); line-height: 1.1;
+}
+.cta-judul h2 em { font-style: normal; font-family: var(--font-s); font-size: 1.1em; }
+.btn-dark {
+  background: var(--black); color: var(--white);
+  font-family: var(--font-h); font-weight: 700; font-size: 14px;
+  padding: 14px 32px; border-radius: 4px; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 8px; transition: background .2s;
+}
+.btn-dark:hover { background: #111; }
+
+/* ===================== FOOTER ===================== */
+footer {
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: 24px clamp(20px,5vw,80px);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 13px; color: rgba(255,255,255,.3);
+}
+.footer-logo { font-weight: 800; font-size: 20px; color: var(--white); }
+
+/* ===================== LIGHTBOX ===================== */
+.lightbox {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(0,0,0,.92); backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+  padding: 20px;
+}
+.lightbox.open { opacity: 1; pointer-events: all; }
+.lb-box {
+  position: relative;
+  max-width: min(820px, 92vw);
+  width: 100%;
+  background: var(--gray3);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.lb-img-wrap {
+  width: 100%;
+  background: #111;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px; color: rgba(255,255,255,.1);
+  min-height: 120px;
+}
+.lb-img-wrap img { max-width: 100%; max-height: 85vh; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; }
+.lb-info { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+.lb-left .lb-cat { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--lime); margin-bottom: 4px; }
+.lb-left .lb-title { font-size: 20px; font-weight: 700; }
+.lb-close {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; cursor: pointer; flex-shrink: 0;
+  transition: background .2s;
+}
+.lb-close:hover { background: var(--lime); color: var(--black); }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .port-grid { grid-template-columns: repeat(2, 1fr); }
+  .port-card.wide { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .nav-ham { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; inset: var(--nav-h) 0 0 0;
+    background: var(--black); padding: 36px 24px; gap: 24px; z-index: 99;
+  }
+  .nav-links.open a { font-size: 22px; }
+  .port-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .port-card.wide { grid-column: span 2; }
+  .awards { display: none; }
+  .cta-band { flex-direction: column; align-items: flex-start; }
+}
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+</style>
+ <script>
+        function showMore() {
+            const hiddenItems =
+                document.querySelectorAll('.materi.hidden');
+
+            hiddenItems.forEach(item => {
+                item.classList.remove('hidden');
+            });
+
+            document.querySelector('.more-btn').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar">
+  <a href="#home" class="nav-logo"><img src="D:\yudi\Web\logo-yudi.png"width="50" alt="Wahyudi"><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://wa.me/6282285950790" target="_blank" class="btn-talk">Let's Talk →</a>
+    <button class="nav-ham" id="navHam" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="port-hero">
+  <div class="hero-bg">
+    <svg viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" fill="none">
+      <path d="M0,250 C240,100 480,400 720,250 C960,100 1200,400 1440,250" stroke="white" stroke-width="1.5"/>
+      <path d="M0,330 C240,180 480,480 720,330 C960,180 1200,480 1440,330" stroke="white" stroke-width="1"/>
+      <path d="M0,170 C240,20 480,320 720,170 C960,20 1200,320 1440,170" stroke="white" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Complete Project</div>
+    <h1>Look At My<br><em>Portfolio</em></h1>
+    <p>A collection of my best projects across various categories, including Graphic Design, Social Media, Digital Marketing, WordPress, Motion Graphics, UI/UX, and Brand Design.</p>
+  </div>
+</section>
+
+<!-- ==================== FILTER ==================== -->
+<div class="filter-wrap reveal">
+  <button class="filter-btn active" data-filter="all">All Work</button>
+  <button class="filter-btn" data-filter="social">Social Media</button>
+  <button class="filter-btn" data-filter="wordpress">WordPress</button>
+  <button class="filter-btn" data-filter="marketing">Digital Marketing</button>
+  <button class="filter-btn" data-filter="motion">Motion Graphic</button>
+   <button class="filter-btn" data-filter="sou">Souvenir</button>
+</div>
+
+<!-- ==================== SECTION HEAD ==================== -->
+<div class="section-head reveal">
+  <div>
+    <div class="section-label">My Work</div>
+    <h2>Give me your <em>feedback</em></h2>
+  </div>
+  <a href="index.html#contact" class="view-all">Hire Me →</a>
+</div>
+
+<!-- ==================== PORTFOLIO GRID ==================== -->
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  CARA MENAMBAH GAMBAR:                               ║
+  ║  1. Simpan gambar di folder yang sama, misal:        ║
+  ║     assets/img/nama-project.jpg                      ║
+  ║  2. Hapus blok <div class="card-img-placeholder">    ║
+  ║  3. Ganti dengan:                                    ║
+  ║     <img src="assets/img/nama.jpg"                   ║
+  ║          alt="Nama Project" class="card-img">        ║
+  ║                                                      ║
+  ║  Ukuran rekomendasi:                                 ║
+  ║  • Card normal (1:1)  → 600 × 600 px                 ║
+  ║  • Card portrait (4:5)→ 600 × 750 px                 ║
+  ║  • Card wide (3:2)    → 900 × 600 px                 ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+<div class="port-grid-wrap">
+<div class="port-grid" id="portGrid">
+
+
+ <!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
+  <div class="port-card wide reveal" data-cat="product" onclick="openLight(this)" style="transition-delay:.1s">
+    <div class="card-num">04</div>
+    <div class="card-chip">Product Design</div>
+    <img src="D:\yudi\Web\designspitze.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"></div>
+    </div>
+  </div>
+
+  <!-- CARD 1 — Social Media: Idul Fitri -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain14.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+
+<!-- CARD 4 — WordPress -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.21s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain12.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 5 — Digital Marketing -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.23s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">02</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain13.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain15.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+<!-- CARD 4 — WordPress -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.21s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain16.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 5 — Digital Marketing -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.23s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">02</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain17.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain18.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+
+<!-- CARD 4 — WordPress -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.21s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain19.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 5 — Digital Marketing -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.23s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">02</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain20.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain21.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+  <!-- CARD 1 — WordPress -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.21s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain2.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 2 — Digital Marketing -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.23s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">02</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain3.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain4.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+<!-- CARD 4 — WordPress -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.21s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain5.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
+  <div class="port-card wide reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.1s">
+    <div class="card-num">04</div>
+    <div class="card-chip">Product Design</div>
+    <img src="D:\yudi\Web\Bannerhp.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"></div>
+    </div>
+  </div>
+
+  <!-- CARD 5 — Digital Marketing -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.23s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">02</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain6.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain7.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+
+<!-- CARD 1 — WordPress -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.21s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain8.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 2 — Digital Marketing -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.23s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">02</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain9.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain10.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain7.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain23.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+  
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain24.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\desain25.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+ <!-- ==================== SOUVENIR ==================== -->
+
+
+ <!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
+  <div class="port-card wide reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.1s">
+    <div class="card-num">04</div>
+    <div class="card-chip">Product Design</div>
+    <img src="D:\yudi\Web\sou\sou2.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"></div>
+    </div>
+  </div>
+
+  <!-- CARD 1 — Social Media: Idul Fitri -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\sou\sou1.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+
+<!-- CARD 4 — WordPress -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.21s">
+    <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\sou\sou3.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 5 — Digital Marketing -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.23s">
+    <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">02</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\sou\sou4.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\sou\sou5.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+<!-- CARD 4 — WordPress -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.21s">
+    <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">01</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\sou\sou6.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 5 — Digital Marketing -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.23s">
+    <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">02</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\sou\sou7.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\sou\sou8.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\sou\sou9.JPEG" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+<!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
+  <div class="port-card wide reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.1s">
+    <div class="card-num">04</div>
+    <div class="card-chip">Product Design</div>
+    <img src="D:\yudi\Web\fast.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"></div>
+    </div>
+  </div>
+
+<!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
+  <div class="port-card wide reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.1s">
+    <div class="card-num">04</div>
+    <div class="card-chip">Product Design</div>
+    <img src="D:\yudi\Web\Bannerfast.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"></div>
+    </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\fast2.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+<!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\fast3.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="social" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+     <img src="D:\yudi\Web\fast4.png" alt="Ucapan Idul Fitri" class="card-img"> 
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
+  <div class="port-card wide reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.1s">
+    <div class="card-num">04</div>
+    <div class="card-chip">Product Design</div>
+    <img src="D:\yudi\Web\fast5.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"></div>
+    </div>
+  </div>
+
+  <!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
+  <div class="port-card wide reveal" data-cat="sou" onclick="openLight(this)" style="transition-delay:.1s">
+    <div class="card-num">04</div>
+    <div class="card-chip">Product Design</div>
+    <img src="D:\yudi\Web\fast6.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"></div>
+    </div>
+  </div>
+<!-- ==================== ANIMASI ==================== -->
+
+<!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="motion" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="motion" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+      <video controls width="100%">
+        <source src="D:\yudi\Web\animasi1.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+    </video>
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="motion" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="motion" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+      <video controls width="125%">
+        <source src="D:\yudi\Web\animasi2.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+    </video>
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+<!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="motion" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="motion" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+      <video controls width="100%">
+        <source src="D:\yudi\Web\animasi3.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+    </video>
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- CARD 3 — Motion Graphic -->
+  <div class="port-card reveal" data-cat="motion" onclick="openLight(this)" style="transition-delay:.25s">
+    <div class="port-card reveal" data-cat="motion" onclick="openLight(this)">
+    <div class="card-num">04</div>
+    <div class="card-chip">Social Media</div>
+      <video controls width="120%">
+        <source src="D:\yudi\Web\animasi4.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+    </video>
+    <div>
+      <div class="placeholder-icon"></div>
+      <div class="placeholder-label"></div>
+      <div class="placeholder-hint"> </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+</div><!-- /port-grid -->
+</div><!-- /port-grid-wrap -->
+
+
+
+
+
+<!-- ==================== CTA ==================== -->
+<div class="cta-band reveal">
+  <div>
+    <h2>Punya project <em>keren?</em></h2>
+    <h2>Ayo kerjasama!</h2>
+  </div>
+  <a href="https://wa.me/6282285950790" target="_blank" class="btn-dark">💬 Hubungi Sekarang →</a>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-logo">W<span style="color:var(--lime)">.</span></div>
+  <div>Copyright © 2026 Wahyudi. All rights reserved.</div>
+  <div style="display:flex;gap:20px">
+    <a href="index.html" style="color:rgba(255,255,255,.3);font-size:12px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.3)'">Home</a>
+    <a href="index.html#contact" style="color:rgba(255,255,255,.3);font-size:12px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.3)'">Contact</a>
+  </div>
+</footer>
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div class="lightbox" id="lightbox" onclick="closeLightBg(event)">
+  <div class="lb-box">
+    <div class="lb-img-wrap" id="lbImgWrap">🖼️</div>
+    <div class="lb-info">
+      <div class="lb-left">
+        <div class="lb-cat" id="lbCat"></div>
+        <div class="lb-title" id="lbTitle"></div>
+      </div>
+      <div class="lb-close" onclick="closeLight()">✕</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== NAV ===== */
+const ham = document.getElementById('navHam');
+const navLinks = document.getElementById('navLinks');
+ham.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* ===== FILTER ===== */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.port-card').forEach(card => {
+      const match = f === 'all' || card.dataset.cat === f;
+      card.classList.toggle('hidden', !match);
+    });
+  });
+});
+
+/* ===== REVEAL ===== */
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+/* ===== LIGHTBOX ===== */
+function openLight(card) {
+  const cat   = card.querySelector('.card-cat')?.textContent || '';
+  const title = card.querySelector('.card-title')?.textContent || '';
+  const img   = card.querySelector('.card-img');
+  document.getElementById('lbCat').textContent   = cat;
+  document.getElementById('lbTitle').textContent = title;
+  const wrap = document.getElementById('lbImgWrap');
+  wrap.innerHTML = img
+    ? `<img src="${img.src}" alt="${img.alt}">`
+    : '🖼️';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLight() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeLightBg(e) { if (e.target === document.getElementById('lightbox')) closeLight(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLight(); });
+</script>
+</body>
+</html>
+
+</body></html>
