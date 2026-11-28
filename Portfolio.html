@@ -99,9 +99,9 @@ button { border: none; cursor: pointer; font-family: inherit; }
 }
 .hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--lime); display: block; }
 .port-hero h1 {
-  font-size: clamp(22px,4vw,60px); font-weight: 800;
+  font-size: clamp(22px,5vw,100px); font-weight: 600;
   letter-spacing: -1px; line-height: 1.1; text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   white-space: nowrap;
 }
 .port-hero h1 em {
@@ -158,6 +158,11 @@ button { border: none; cursor: pointer; font-family: inherit; }
   HOW TO ADD IMAGES:
   Replace <div class="card-img-placeholder"> with:
   <img src="assets/img/YOUR-IMAGE.jpg" alt="Project Name" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Graphic Design</div>
+      <div class="card-title">Your Image.Jpg</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
 
   Recommended sizes:
   - Square card   (1:1) → 600x600px
@@ -405,7 +410,7 @@ footer {
   min-height: 120px;
 }
 .lb-img-wrap img { max-width: 100%; max-height: 85vh; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; }
-.lb-info { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+.lb-info { padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .lb-left .lb-cat { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--lime); margin-bottom: 4px; }
 .lb-left .lb-title { font-size: 20px; font-weight: 700; }
 .lb-close {
@@ -416,6 +421,16 @@ footer {
   transition: background .2s;
 }
 .lb-close:hover { background: var(--lime); color: var(--black); }
+.lb-desc {
+  padding: 0 24px 20px;
+  font-size: 14px; line-height: 1.8;
+  color: rgba(255,255,255,.55);
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding-top: 16px;
+  display: none;
+}
+.lb-desc.has-desc { display: block; }
+.lb-box { max-height: 92vh; overflow-y: auto; }
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 900px) {
@@ -519,7 +534,12 @@ footer {
   ║  2. Hapus blok <div class="card-img-placeholder">    ║
   ║  3. Ganti dengan:                                    ║
   ║     <img src="assets/img/nama.jpg"                   ║
-  ║          alt="Nama Project" class="card-img">        ║
+  ║          alt="Nama Project" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Graphic Design</div>
+      <div class="card-title">Nama.Jpg</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>        ║
   ║                                                      ║
   ║  Ukuran rekomendasi:                                 ║
   ║  • Card normal (1:1)  → 600 × 600 px                 ║
@@ -536,6 +556,11 @@ footer {
     <div class="card-num">04</div>
     <div class="card-chip">Product Design</div>
     <img src="designspitze.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Product Design</div>
+      <div class="card-title">Spitze Studium — Banner Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -547,7 +572,12 @@ footer {
   <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain14.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain14.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -560,7 +590,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain12.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain12.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -574,7 +609,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">02</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain13.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain13.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -588,7 +628,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain15.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain15.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -602,7 +647,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain16.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain16.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -616,7 +666,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">02</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain17.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain17.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -630,7 +685,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain18.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain18.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -645,7 +705,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain19.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain19.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -659,7 +724,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">02</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain20.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain20.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -673,7 +743,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain21.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain21.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -686,7 +761,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain2.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain2.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -700,7 +780,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">02</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain3.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain3.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -714,7 +799,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain4.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain4.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -728,7 +818,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain5.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain5.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -743,6 +838,11 @@ footer {
     <div class="card-num">04</div>
     <div class="card-chip">Product Design</div>
     <img src="Bannerhp.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Banner Souvenir</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -755,7 +855,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">02</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain6.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain6.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -769,7 +874,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain7.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain7.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -784,7 +894,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain8.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain8.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -798,7 +913,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">02</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain9.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain9.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -812,7 +932,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain10.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain10.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -828,7 +953,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain7.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain7.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -842,7 +972,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain23.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain23.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -856,7 +991,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain24.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain24.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -870,7 +1010,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="desain25.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="desain25.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Social Media Post</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -887,6 +1032,11 @@ footer {
     <div class="card-num">04</div>
     <div class="card-chip">Product Design</div>
     <img src="sou2.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -898,7 +1048,12 @@ footer {
   <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="sou1.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="sou1.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -911,7 +1066,12 @@ footer {
     <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="sou3.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="sou3.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -925,7 +1085,12 @@ footer {
     <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">02</div>
     <div class="card-chip">Social Media</div>
-     <img src="sou4.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="sou4.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -939,7 +1104,12 @@ footer {
     <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="sou5.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="sou5.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -952,7 +1122,12 @@ footer {
     <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">01</div>
     <div class="card-chip">Social Media</div>
-     <img src="sou6.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="sou6.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -966,7 +1141,12 @@ footer {
     <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">02</div>
     <div class="card-chip">Social Media</div>
-     <img src="sou7.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="sou7.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -980,7 +1160,12 @@ footer {
     <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="sou8.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="sou8.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -994,7 +1179,12 @@ footer {
     <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="sou9.JPEG" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="sou9.JPEG" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Souvenir Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -1008,6 +1198,11 @@ footer {
     <div class="card-num">04</div>
     <div class="card-chip">Product Design</div>
     <img src="fast.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Fastcloth.id — Souvenir</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -1020,6 +1215,11 @@ footer {
     <div class="card-num">04</div>
     <div class="card-chip">Product Design</div>
     <img src="Bannerfast.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Fastcloth.id — Banner</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -1032,7 +1232,12 @@ footer {
     <div class="port-card reveal" data-cat="sou" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="fast2.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="fast2.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Fastcloth.id Design</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -1046,7 +1251,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="fast3.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="fast3.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Fastcloth.id — Social Media</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -1060,7 +1270,12 @@ footer {
     <div class="port-card reveal" data-cat="social" onclick="openLight(this)">
     <div class="card-num">04</div>
     <div class="card-chip">Social Media</div>
-     <img src="fast4.png" alt="Ucapan Idul Fitri" class="card-img"> 
+     <img src="fast4.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Social Media</div>
+      <div class="card-title">Fastcloth.id — Social Media</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div> 
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -1074,6 +1289,11 @@ footer {
     <div class="card-num">04</div>
     <div class="card-chip">Product Design</div>
     <img src="fast5.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Fastcloth.id — Merchandise</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -1086,6 +1306,11 @@ footer {
     <div class="card-num">04</div>
     <div class="card-chip">Product Design</div>
     <img src="fast6.png" alt="Ucapan Idul Fitri" class="card-img">
+    <div class="card-overlay">
+      <div class="card-cat">Souvenir</div>
+      <div class="card-title">Fastcloth.id — Merchandise</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
     <div>
       <div class="placeholder-icon"></div>
       <div class="placeholder-label"></div>
@@ -1167,10 +1392,15 @@ footer {
   <div class="port-card wide reveal" data-cat="wordpress" onclick="openLight(this)" style="transition-delay:.1s">
     <div class="card-num">04</div>
     <div class="card-chip">WordPress</div>
-    <img src="wordpress1.png" alt="Ucapan Idul Fitri" class="card-img">
+    <img src="wordpress1.png" alt="Ucapan Idul Fitri" class="card-img" data-desc="As a WordPress Developer, I am responsible for building and managing WordPress-based websites — from implementing designs using Elementor and customizing themes, to optimizing website performance. I also have hands-on experience in setting up and managing SEO plugins (Yoast SEO), integrating Google Analytics, Google Ads, and Meta Ads, as well as ensuring websites run smoothly and are fully responsive across all devices.">
+    <div class="card-overlay">
+      <div class="card-cat">WordPress</div>
+      <div class="card-title">Spitze Studium — Website</div>
+      <div class="card-btn">View Project <span class="card-btn-arrow">→</span></div>
+    </div>
     <div>
       <div class="placeholder-icon"></div>
-      <div class="placeholder-label">As a WordPress Developer, I am responsible for building and managing WordPress-based websites — from implementing designs using Elementor and customizing themes, to optimizing website performance. I also have hands-on experience in setting up and managing SEO plugins (Yoast SEO), integrating Google Analytics, Google Ads, and Meta Ads, as well as ensuring websites run smoothly and are fully responsive across all devices.</div>
+      <div class="placeholder-label"></div>
       <div class="placeholder-hint"></div>
     </div>
   </div>
@@ -1213,6 +1443,7 @@ footer {
       </div>
       <div class="lb-close" onclick="closeLight()">✕</div>
     </div>
+    <div class="lb-desc" id="lbDesc"></div>
   </div>
 </div>
 
@@ -1247,12 +1478,21 @@ function openLight(card) {
   const cat   = card.querySelector('.card-cat')?.textContent || '';
   const title = card.querySelector('.card-title')?.textContent || '';
   const img   = card.querySelector('.card-img');
+  const desc  = img?.dataset.desc || '';
   document.getElementById('lbCat').textContent   = cat;
   document.getElementById('lbTitle').textContent = title;
   const wrap = document.getElementById('lbImgWrap');
   wrap.innerHTML = img
     ? `<img src="${img.src}" alt="${img.alt}">`
     : '🖼️';
+  const lbDesc = document.getElementById('lbDesc');
+  if (desc) {
+    lbDesc.textContent = desc;
+    lbDesc.classList.add('has-desc');
+  } else {
+    lbDesc.textContent = '';
+    lbDesc.classList.remove('has-desc');
+  }
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
