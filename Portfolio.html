@@ -453,9 +453,35 @@ footer {
 }
 
 /* reveal */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
 .reveal.visible { opacity: 1; transform: none; }
 
+
+/* ===================== CUSTOM CURSOR ===================== */
+*, *::before, *::after { cursor: none !important; }
+.cursor-dot {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--lime);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform .1s, width .2s, height .2s, opacity .2s;
+}
+.cursor-ring {
+  position: fixed; top: 0; left: 0; z-index: 9998;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1.5px solid rgba(198,241,53,.5);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform .12s ease, width .2s, height .2s, opacity .3s;
+}
+.cursor-dot.hover { width: 16px; height: 16px; }
+.cursor-ring.hover { width: 56px; height: 56px; border-color: var(--lime); opacity: .6; }
+@media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
+
+/* ===================== CARD TILT 3D ===================== */
+.port-card { transform-style: preserve-3d; will-change: transform; }
+.port-card:hover { transform: none; } /* JS yang handle */
 </style>
  <script>
         function showMore() {
@@ -471,6 +497,8 @@ footer {
     </script>
 </head>
 <body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- ==================== NAVBAR ==================== -->
 <nav class="navbar">
@@ -1388,7 +1416,7 @@ footer {
   </div>
 
 
-  <!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
+   <!-- CARD 4 — Product Design: Mystic Seraphy Banner -->
   <div class="port-card wide reveal" data-cat="wordpress" onclick="openLight(this)" style="transition-delay:.1s">
     <div class="card-num">04</div>
     <div class="card-chip">WordPress</div>
@@ -1438,6 +1466,8 @@ footer {
       <div class="placeholder-hint"></div>
     </div>
   </div>
+
+
 
 </div><!-- /port-grid -->
 </div><!-- /port-grid-wrap -->
@@ -1534,7 +1564,57 @@ function closeLight() {
 }
 function closeLightBg(e) { if (e.target === document.getElementById('lightbox')) closeLight(); }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLight(); });
+
+/* ===== CUSTOM CURSOR ===== */
+const dot  = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mouseX = 0, mouseY = 0;
+let ringX  = 0, ringY  = 0;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX; mouseY = e.clientY;
+  dot.style.left = mouseX + 'px';
+  dot.style.top  = mouseY + 'px';
+});
+
+(function animateRing() {
+  ringX += (mouseX - ringX) * 0.12;
+  ringY += (mouseY - ringY) * 0.12;
+  ring.style.left = ringX + 'px';
+  ring.style.top  = ringY + 'px';
+  requestAnimationFrame(animateRing);
+})();
+
+document.querySelectorAll('a, button, .port-card, .filter-btn').forEach(el => {
+  el.addEventListener('mouseenter', () => { dot.classList.add('hover'); ring.classList.add('hover'); });
+  el.addEventListener('mouseleave', () => { dot.classList.remove('hover'); ring.classList.remove('hover'); });
+});
+
+/* ===== CARD TILT 3D ===== */
+document.querySelectorAll('.port-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const cx = r.width  / 2;
+    const cy = r.height / 2;
+    const rotX = ((y - cy) / cy) * -8;
+    const rotY = ((x - cx) / cx) *  8;
+    card.style.transform = `perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-5px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+/* ===== SCROLL REVEAL dengan stagger per baris ===== */
+const cards = document.querySelectorAll('.port-card.reveal');
+cards.forEach((card, i) => {
+  card.style.transitionDelay = (i % 3) * 0.08 + 's';
+});
+
 </script>
 </body>
 </html>
+
 </body></html>
